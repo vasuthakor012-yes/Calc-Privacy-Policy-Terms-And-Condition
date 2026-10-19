@@ -3,114 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Calc+</title>
+    <title>Terms and Conditions - Calc+</title>
     <style>
-        /* यह कोड बैकग्राउंड को हमेशा व्हाइट और टेक्स्ट को ब्लैक रखेगा */
+        /* डार्क मोड को बायपास करके हमेशा व्हाइट बैकग्राउंड रखने के लिए */
+        :root {
+            color-scheme: light;
+        }
         body {
-            background-color: #FFFFFF !important; 
-            color: #000000 !important;
-            font-family: Arial, sans-serif;
+            background-color: #FFFFFF !important;
+            color: #111111 !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             padding: 20px;
             max-width: 800px;
             margin: auto;
         }
+        h1 {
+            color: #000000 !important;
+            text-align: center;
+            font-size: 1.6em;
+            margin-bottom: 5px;
+        }
+        h2 {
+            color: #000000 !important;
+            font-size: 1.2em;
+            border-bottom: 2px solid #EEEEEE;
+            padding-bottom: 5px;
+            margin-top: 35px;
+        }
+        p {
+            margin-bottom: 15px;
+            color: #222222 !important;
+        }
+        ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+            color: #222222 !important;
+        }
+        .header-info {
+            text-align: center;
+            font-size: 0.95em;
+            color: #444444 !important;
+            background-color: #F9F9F9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        .header-info a {
+            color: #0066CC !important;
+            text-decoration: none;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666666 !important;
+            border-top: 1px solid #EEEEEE;
+            padding-top: 20px;
+        }
+        code {
+            background-color: #F4F4F4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
     </style>
 </head>
 <body>
 
-    <!-- अपनी प्राइवेसी पॉलिसी का पूरा टेक्स्ट नीचे पेस्ट करें -->
+    <h1>TERMS AND CONDITIONS<br>CALC+: CALCULATOR & VAULT</h1>
     
-    <h2>Privacy Policy</h2>
-    
-    <p>TERMS AND CONDITIONS — CALC+: CALCULATOR & VAULT
+    <div class="header-info">
+        <strong>Developer:</strong> Vasu Thakor<br>
+        <strong>Publisher:</strong> PromptX Tech<br>
+        <strong>Effective Date:</strong> 18 October 2026<br>
+        <strong>Official Support Email:</strong> <a href="mailto:support.calcplush.promptxtech@gmail.com">support.calcplush.promptxtech@gmail.com</a>
+    </div>
 
-Developer: Vasu Thakor
-Publisher: PromptX Tech
-Effective Date: 18 October 2026
-Official Support Email: support.calcplush.promptxtech@gmail.com
+    <h2>1. ACCEPTANCE OF TERMS</h2>
+    <p>By accepting the Terms & Conditions on the initial launch screen (<code>TermsActivity</code>) of Calc+, signing in, or continuing to use the Application, you enter into a legally binding agreement with PromptX Tech ("we," "us," or "our"). If you do not agree to any provision of these Terms, do not use Calc+ and uninstall it immediately.</p>
 
-1. ACCEPTANCE OF TERMS
-By accepting the Terms & Conditions on the initial launch screen (`TermsActivity`) of Calc+, signing in, or continuing to use the Application, you enter into a legally binding agreement with PromptX Tech ("we," "us," or "our"). If you do not agree to any provision of these Terms, do not use Calc+ and uninstall it immediately.
+    <h2>2. NATURE OF THE APPLICATION</h2>
+    <p>Calc+ is a dual-purpose utility application:</p>
+    <ul>
+        <li>It operates as a full-featured everyday calculator with calculation history, customizable themes, key animations, and a shake-to-reveal custom message feature.</li>
+        <li>It provides an optional, PIN-protected encrypted privacy vault ("Calc+ Vault") for hiding and backing up personal photos, videos, audio files, documents, and APKs.</li>
+    </ul>
 
-==================================================
+    <h2>3. STORAGE ACCESS, ENCRYPTION & ORIGINAL FILE DELETION</h2>
+    <p>To provide genuine file hiding rather than file duplication, Calc+ requires "All Files Access" (<code>MANAGE_EXTERNAL_STORAGE</code>) on Android 11+ and media/storage permissions on all supported Android versions.</p>
+    <p>By importing files into the Calc+ Vault, you explicitly authorize the Application to:</p>
+    <ul>
+        <li>(i) Encrypt your selected files using AES-256-GCM into the app's private internal storage directory;</li>
+        <li>(ii) Permanently delete the original unencrypted file from its public source folder (and update Android MediaStore) once encryption is verified; and</li>
+        <li>(iii) Write decrypted files back to your public <code>Downloads/CalcPlus_Restored</code> directory when you use the "Restore" feature.</li>
+    </ul>
 
-2. NATURE OF THE APPLICATION
-Calc+ is a dual-purpose utility application:
-• It operates as a full-featured everyday calculator with calculation history, customizable themes, key animations, and a shake-to-reveal custom message feature.
-• It provides an optional, PIN-protected encrypted privacy vault ("Calc+ Vault") for hiding and backing up personal photos, videos, audio files, documents, and APKs.
+    <h2>4. GOOGLE SIGN-IN & CLOUD BACKUP TERMS</h2>
+    <ul>
+        <li><strong>Google Drive AppData Sync:</strong> Calc+ offers an automatic and manual Cloud Backup feature using your personal Google Drive (<code>appDataFolder</code> scope).</li>
+        <li><strong>User Responsibility for Cloud Quota & Network:</strong> Cloud backup requires an active internet connection, a valid Google Sign-In session, and sufficient free storage space in your personal Google Drive account. PromptX Tech is not responsible for failed uploads or incomplete restores caused by network interruptions, revoked permissions, Google Drive storage limits, or Google account suspension.</li>
+        <li><strong>Deleting Cloud Backup:</strong> Selecting "Delete Cloud Backup" inside Vault Settings or triggering a "Force Reset" will permanently erase your backed-up files from Google Drive.</li>
+    </ul>
 
-==================================================
+    <h2>5. PIN RECOVERY, SAFE RESET & FORCE RESET DISCLAIMERS</h2>
+    <ul>
+        <li><strong>Zero Backdoor Architecture:</strong> Your Vault Master Keys are encrypted using keys derived from your 6-digit PIN and your Security Question Answer via PBKDF2-HMAC-SHA256. PromptX Tech has no master password, backdoor, or technical ability to unlock your Vault remotely.</li>
+        <li><strong>Safe PIN Reset:</strong> If you forget your PIN, you may reset it via the Forgot PIN screen (accessed by holding 'AC' and pressing '=' on the calculator) ONLY if you provide the exact Security Question Answer set during setup.</li>
+        <li><strong>Force Reset (Destructive Action):</strong> Turning on "Force Reset" on the Forgot PIN screen is an emergency measure that permanently deletes ALL local Vault files (Real and Decoy), encryption keys, and Google Drive cloud backups. Once executed, this data cannot be recovered under any circumstances.</li>
+        <li><strong>Brute-Force Lockout:</strong> Entering 5 consecutive incorrect PIN attempts on the calculator temporarily locks Vault access for 30 seconds.</li>
+    </ul>
 
-3. STORAGE ACCESS, ENCRYPTION & ORIGINAL FILE DELETION
-To provide genuine file hiding rather than file duplication, Calc+ requires "All Files Access" (`MANAGE_EXTERNAL_STORAGE`) on Android 11+ and media/storage permissions on all supported Android versions.
-By importing files into the Calc+ Vault, you explicitly authorize the Application to:
-(i) Encrypt your selected files using AES-256-GCM into the app's private internal storage directory;
-(ii) Permanently delete the original unencrypted file from its public source folder (and update Android MediaStore) once encryption is verified; and
-(iii) Write decrypted files back to your public `Downloads/CalcPlus_Restored` directory when you use the "Restore" feature.
+    <h2>6. USER RESPONSIBILITY & DATA LOSS DISCLAIMER</h2>
+    <ul>
+        <li><strong>Before Uninstalling or Formatting:</strong> If you have disabled Cloud Backup (or skipped Google Drive permission), all your hidden files exist ONLY inside the app's private local storage. Uninstalling Calc+, clearing app data from Android Settings, or formatting your device without first restoring your files (or completing a verified Cloud Backup) will result in permanent, irreversible data loss.</li>
+        <li><strong>Limitation of Liability:</strong> To the maximum extent permitted by applicable law, PromptX Tech and Vasu Thakor shall not be liable for any direct, indirect, incidental, or consequential damages, including but not limited to permanent loss of photos, videos, documents, corrupted files, failed cloud syncs, or unauthorized physical access to your device.</li>
+    </ul>
 
-==================================================
+    <h2>7. DECOY VAULT & PANIC LOCK FEATURES</h2>
+    <ul>
+        <li><strong>Decoy (Fake) PIN:</strong> Calc+ allows you to configure a secondary 6-digit Decoy PIN that opens a separate Decoy Vault.</li>
+        <li><strong>Panic Lock (Face-Down Exit):</strong> Calc+ uses your device's accelerometer to lock the active session and navigate to the Home Screen when the device is turned face-down.</li>
+        <li><strong>"As-Is" Provision:</strong> Both security features depend on device hardware sensors and operating system behavior. They are provided strictly on an "as-is" basis without any guarantee of performance under duress or hardware failure.</li>
+    </ul>
 
-4. GOOGLE SIGN-IN & CLOUD BACKUP TERMS
-• Google Drive AppData Sync: Calc+ offers an automatic and manual Cloud Backup feature using your personal Google Drive (`appDataFolder` scope).
-• User Responsibility for Cloud Quota & Network: Cloud backup requires an active internet connection, a valid Google Sign-In session, and sufficient free storage space in your personal Google Drive account. PromptX Tech is not responsible for failed uploads or incomplete restores caused by network interruptions, revoked permissions, Google Drive storage limits, or Google account suspension.
-• Deleting Cloud Backup: Selecting "Delete Cloud Backup" inside Vault Settings or triggering a "Force Reset" will permanently erase your backed-up files from Google Drive.
+    <h2>8. LAWFUL USE & USER CONDUCT</h2>
+    <p>You agree to use Calc+ strictly in compliance with all applicable local, state, national, and international laws. You must not use Calc+ to store, conceal, or back up any unlawful, illegal, or prohibited material. Because PromptX Tech has zero visibility into your encrypted files, you bear 100% legal responsibility for all content stored inside your local Vault and your Google Drive backup.</p>
 
-==================================================
+    <h2>9. INTELLECTUAL PROPERTY RIGHTS</h2>
+    <p>All rights, title, source code, UI designs, custom themes, graphics, logos, and trademarks associated with Calc+ are the exclusive intellectual property of PromptX Tech and Vasu Thakor. You may not reverse-engineer, decompile, modify, redistribute, or create derivative works of the Application without prior written permission from PromptX Tech.</p>
 
-5. PIN RECOVERY, SAFE RESET & FORCE RESET DISCLAIMERS
-• Zero Backdoor Architecture: Your Vault Master Keys are encrypted using keys derived from your 6-digit PIN and your Security Question Answer via PBKDF2-HMAC-SHA256. PromptX Tech has no master password, backdoor, or technical ability to unlock your Vault remotely.
-• Safe PIN Reset: If you forget your PIN, you may reset it via the Forgot PIN screen (accessed by holding 'AC' and pressing '=' on the calculator) ONLY if you provide the exact Security Question Answer set during setup.
-• Force Reset (Destructive Action): Turning on "Force Reset" on the Forgot PIN screen is an emergency measure that permanently deletes ALL local Vault files (Real and Decoy), encryption keys, and Google Drive cloud backups. Once executed, this data cannot be recovered under any circumstances.
-• Brute-Force Lockout: Entering 5 consecutive incorrect PIN attempts on the calculator temporarily locks Vault access for 30 seconds.
+    <h2>10. DISCLAIMER OF WARRANTIES</h2>
+    <p>Calc+ is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, express or implied, including implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
 
-==================================================
+    <h2>11. GOVERNING LAW & JURISDICTION</h2>
+    <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of India. Any legal disputes or proceedings arising out of or relating to these Terms or your use of Calc+ shall be subject to the exclusive jurisdiction of the competent courts located in Gujarat, India.</p>
 
-6. USER RESPONSIBILITY & DATA LOSS DISCLAIMER
-• Before Uninstalling or Formatting: If you have disabled Cloud Backup (or skipped Google Drive permission), all your hidden files exist ONLY inside the app's private local storage. Uninstalling Calc+, clearing app data from Android Settings, or formatting your device without first restoring your files (or completing a verified Cloud Backup) will result in permanent, irreversible data loss.
-• Limitation of Liability: To the maximum extent permitted by applicable law, PromptX Tech and Vasu Thakor shall not be liable for any direct, indirect, incidental, or consequential damages, including but not limited to permanent loss of photos, videos, documents, corrupted files, failed cloud syncs, or unauthorized physical access to your device.
+    <h2>12. CONTACT INFORMATION</h2>
+    <p>For support inquiries, bug reports, or legal notices regarding these Terms, please contact us at:</p>
+    <p>
+        <strong>Developer:</strong> Vasu Thakor<br>
+        <strong>Company / Publisher:</strong> PromptX Tech<br>
+        <strong>Official Helpline Email:</strong> <a href="mailto:support.calcplush.promptxtech@gmail.com">support.calcplush.promptxtech@gmail.com</a>
+    </p>
 
-==================================================
-
-7. DECOY VAULT & PANIC LOCK FEATURES
-• Decoy (Fake) PIN: Calc+ allows you to configure a secondary 6-digit Decoy PIN that opens a separate Decoy Vault.
-• Panic Lock (Face-Down Exit): Calc+ uses your device's accelerometer to lock the active session and navigate to the Home Screen when the device is turned face-down.
-• "As-Is" Provision: Both security features depend on device hardware sensors and operating system behavior. They are provided strictly on an "as-is" basis without any guarantee of performance under duress or hardware failure.
-
-==================================================
-
-8. LAWFUL USE & USER CONDUCT
-You agree to use Calc+ strictly in compliance with all applicable local, state, national, and international laws. You must not use Calc+ to store, conceal, or back up any unlawful, illegal, or prohibited material. Because PromptX Tech has zero visibility into your encrypted files, you bear 100% legal responsibility for all content stored inside your local Vault and your Google Drive backup.
-
-==================================================
-
-9. INTELLECTUAL PROPERTY RIGHTS
-All rights, title, source code, UI designs, custom themes, graphics, logos, and trademarks associated with Calc+ are the exclusive intellectual property of PromptX Tech and Vasu Thakor. You may not reverse-engineer, decompile, modify, redistribute, or create derivative works of the Application without prior written permission from PromptX Tech.
-
-==================================================
-
-10. DISCLAIMER OF WARRANTIES
-Calc+ is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, express or implied, including implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
-
-==================================================
-
-11. GOVERNING LAW & JURISDICTION
-These Terms and Conditions shall be governed by and construed in accordance with the laws of India. Any legal disputes or proceedings arising out of or relating to these Terms or your use of Calc+ shall be subject to the exclusive jurisdiction of the competent courts located in Gujarat, India.
-
-==================================================
-
-12. CONTACT INFORMATION
-For support inquiries, bug reports, or legal notices regarding these Terms, please contact us at:
-
-Developer: Vasu Thakor
-Company / Publisher: PromptX Tech
-Official Helpline Email: support.calcplush.promptxtech@gmail.com
-
-© 2026 PromptX Tech. All rights reserved.
-
-</p>
-    
-    <!-- यहाँ तक -->
+    <div class="footer">
+        &copy; 2026 PromptX Tech. All rights reserved.
+    </div>
 
 </body>
 </html>
