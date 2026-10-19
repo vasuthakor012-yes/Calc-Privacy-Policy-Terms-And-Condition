@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Calc+</title>
+    <style>
+        /* यह कोड बैकग्राउंड को हमेशा व्हाइट और टेक्स्ट को ब्लैक रखेगा */
+        body {
+            background-color: #FFFFFF !important; 
+            color: #000000 !important;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- अपनी प्राइवेसी पॉलिसी का पूरा टेक्स्ट नीचे पेस्ट करें -->
+    
+    <h2>Privacy Policy</h2>
+    
+    <p>PRIVACY POLICY — CALC+
+
+Developer: Vasu Thakor
+Company / Publisher: PromptX Tech
+Effective Date: 18 October 2026
+Official Support Email: support.calcplush.promptxtech@gmail.com
+
+INTRODUCTION
+Welcome to Calc+ ("the Application"). Calc+ is a dual-purpose smart calculator and encrypted privacy vault developed and published by PromptX Tech ("we," "us," or "our"). We are committed to protecting the privacy and security of every user ("you" or "your").
+
+By downloading, installing, or using Calc+, and by accepting our Terms on the initial launch screen, you acknowledge that you have read, understood, and agreed to this Privacy Policy.
+
+==================================================
+
+1. OUR CORE PRIVACY ARCHITECTURE: ZERO DEVELOPER ACCESS
+Calc+ is engineered on a Zero-Knowledge, User-Controlled Privacy model:
+• PromptX Tech does NOT own or operate any external backend servers to collect, view, sell, or analyze your personal files.
+• All files hidden inside the Calc+ Vault are encrypted locally on your device using military-grade AES-256 (GCM mode) encryption BEFORE they are stored locally or backed up to your personal Google Drive.
+• Even when you enable Cloud Backup, your encrypted files and keys are stored exclusively inside your own personal Google Drive's hidden "appDataFolder". PromptX Tech, Vasu Thakor, or any third party cannot access, read, or decrypt your files.
+
+==================================================
+
+2. INFORMATION WE HANDLE & HOW IT IS PROTECTED
+
+A. Google Account Information (Google Sign-In)
+When you sign in using Google Sign-In, the app retrieves your basic profile details (Display Name, Email Address, and Profile Picture URL) solely to display your account profile inside the app's Navigation Drawer and to authenticate your personal Google Drive backup session. This information is stored locally in your device's private SharedPreferences ("AppConfig") and is never transmitted to PromptX Tech.
+
+B. Authentication Credentials & Encryption Keys
+• PIN & Security Answer Hashes: Your 6-digit Main PIN, 6-digit Decoy PIN, and Security Question Answer are never stored in plain text. They are hashed using one-way SHA-256 hashing.
+• Key Derivation & Master Key Wrapping: Your Vault Master Key (`master_REAL.key` / `master_DECOY.key`) and Recovery Key (`recovery_REAL.key`) are protected using PBKDF2WithHmacSHA256 (100,000 iterations) with a cryptographically random 16-byte Salt.
+• Because hashing is one-way and keys are encrypted with your PIN/Answer, PromptX Tech has no technical capability to view or recover your credentials.
+
+C. Encrypted Vault Files & Thumbnails
+Files imported into the Vault (Photos, Videos, Music, Documents, and APKs) are encrypted into `.enc` files along with encrypted `.thumb` thumbnails using AES/GCM/NoPadding (256-bit key, 12-byte random IV, 128-bit authentication tag). Temporary decrypted cache files created for viewing or sharing are automatically purged when you exit the Vault or trigger the Panic Lock.
+
+D. Calculator History & Custom Preferences
+Mathematical calculations, selected calculator themes, key animations, and your custom "Shake Magic Message" are stored locally on your device. You can clear your calculation history anytime via the "Clear History" menu option.
+
+E. Google Drive Cloud Backup Data (Optional)
+If you grant Google Drive permission and keep Auto-Backup enabled, Calc+ uploads only:
+1. Your hashed PIN configuration (`calcplus_vault_backup.json`).
+2. Your encrypted key wrappers (`KEY_master_*.key`, `KEY_recovery_*.key`, `KEY_salt_*.txt`).
+3. Your AES-256 encrypted vault files (`.enc` and `.thumb`).
+This data goes directly from your device to your own Google Account's private `appDataFolder` over HTTPS. You can disable Auto-Backup or permanently delete your Cloud Backup at any time from Vault Settings.
+
+==================================================
+
+3. PERMISSIONS WE REQUEST AND WHY
+Calc+ requests only the permissions strictly necessary to deliver its core features:
+
+1. MANAGE_EXTERNAL_STORAGE (All Files Access — Android 11+):
+Required to locate, import, encrypt, and delete the original unencrypted copies of photos, videos, audio, documents, and APKs from public device storage after securing them in the Vault, and to restore decrypted files back to `Downloads/CalcPlus_Restored`. Calc+ never scans or touches any file you have not explicitly selected.
+
+2. READ_EXTERNAL_STORAGE & WRITE_EXTERNAL_STORAGE:
+Used on Android 10 and below to read files selected for encryption and to write restored files back to your public Downloads directory.
+
+3. READ_MEDIA_IMAGES, READ_MEDIA_VIDEO & READ_MEDIA_AUDIO (Android 13+):
+Allows the built-in custom file picker to display your device's photos, videos, and audio files so you can select which items to move into the encrypted Vault.
+
+4. INTERNET:
+Used exclusively to authenticate your Google Account via Google Sign-In and to sync your encrypted Vault backup with your personal Google Drive (`DriveScopes.DRIVE_APPDATA`).
+
+5. FOREGROUND_SERVICE & FOREGROUND_SERVICE_DATA_SYNC (Android 9 to Android 14+):
+Allows Calc+ to run `VaultBackupService` reliably in the background so that large file uploads, cloud restores, and cloud deletions do not get interrupted when you minimize the app or lock your screen.
+
+6. POST_NOTIFICATIONS (Android 13+):
+Used to display real-time, file-by-file progress notifications during local file encryption, file restoration, deletion, and Google Drive cloud synchronization.
+
+7. HIGH_SAMPLING_RATE_SENSORS (Accelerometer Sensor):
+Powers two on-device features:
+• Panic Lock (Face-Down Protection): Detects when your phone is flipped face-down (Z-axis < -8.5) to immediately clear decrypted cache, wipe active session keys from RAM, and exit to your Home Screen.
+• Calculator Shake Gesture: Detects a gentle shake on the calculator screen to display your customizable Magic Message.
+Sensor readings are processed strictly in real time in memory and are never recorded or stored.
+
+==================================================
+
+4. THIRD-PARTY SERVICES & SDKS
+Calc+ does NOT include any third-party advertising networks, behavioral trackers, or analytics SDKs. The only external library communicating over the network is Google Play Services Auth & Google Drive API (`com.google.android.gms:play-services-auth` and `com.google.api.services.drive`), which is governed by Google's Privacy Policy.
+
+==================================================
+
+5. DATA RETENTION AND DELETION
+• Local Data: Remains on your device until you restore/delete files inside the Vault, use the "Force Reset & Delete All" option on the Forgot PIN screen, clear app storage, or uninstall the app.
+• Cloud Backup Data: Remains in your Google Drive `appDataFolder` until you tap "Delete Cloud Backup" inside Vault Settings -> Cloud Backup, perform a "Force Reset", or revoke Calc+ access from your Google Account settings.
+• Logging Out: Using the "Logout" option in the Navigation Drawer signs out your Google session, clears active Vault encryption keys from RAM, and wipes temporary decrypted cache files.
+
+==================================================
+
+6. CHILDREN'S PRIVACY
+Calc+ is not directed at children under the age of 13 (or the applicable minimum age in your jurisdiction). We do not knowingly collect personal information from children.
+
+==================================================
+
+7. DATA SECURITY DISCLAIMER
+While Calc+ employs bank-grade AES-256-GCM encryption, PBKDF2 key stretching (100,000 iterations), `FLAG_SECURE` screenshot protection, and atomic file operations, no software or hardware storage is 100% immune to all risks. You are responsible for keeping your PIN, Decoy PIN, Security Question Answer, and Google Account secure.
+
+==================================================
+
+8. CHANGES TO THIS PRIVACY POLICY
+PromptX Tech reserves the right to update this Privacy Policy as new features are introduced or legal requirements change. Updates will be reflected with a new "Effective Date" at the top of this policy.
+
+==================================================
+
+9. CONTACT US
+If you have any questions, privacy concerns, or technical issues regarding Calc+, please contact us at:
+
+Developer: Vasu Thakor
+Company: PromptX Tech
+Official Helpline Email: support.calcplush.promptxtech@gmail.com
+
+© 2026 PromptX Tech. All rights reserved.
+
+</p>
+    
+    <!-- यहाँ तक -->
+
+</body>
+</html>
